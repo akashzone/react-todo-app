@@ -28,7 +28,8 @@ This project helps users add, complete, and delete tasks, with data persisted us
 
 ## 📸 Preview
 
-👉 Deployed on Vercel (link will be added)
+👉 Deployed on Vercel : 
+https://react-todo-app-sigma-sage.vercel.app/
 
 ---
 
