@@ -3,10 +3,13 @@ import { useState } from 'react';
 export default function Todo() {
 
     const [tasks, setTasks] = useState("");
-    const [todos, setTodos] = useState([]);
 
-    let storedData = localStorage.getItem("todos");
-    let parsedTodos = JSON.parse(storedData);
+
+    const [todos, setTodos] = useState(() => {
+        const stored = localStorage.getItem("todos");
+        return stored ? JSON.parse(stored) : [];
+    });
+
     function onChangeHandler(event) {
         let newTodo = event.target.value;
         console.log(newTodo)
@@ -45,14 +48,18 @@ export default function Todo() {
                     </form>
                     <div className="taskContainer">
                         <ul>
-                            {parsedTodos.map((todo, index) => (
+                            {todos.map((todo, index) => (
                                 <li key={index} className="task">
                                     <input type="checkbox" className="check" />
-                                    <span className='text'>{todo}</span>
-                                    <i onClick={() => dtlHandler(index)} className="fa-solid fa-trash-can"></i>
+                                    <span className="text">{todo}</span>
+                                    <i
+                                        onClick={() => dtlHandler(index)}
+                                        className="fa-solid fa-trash-can"
+                                    ></i>
                                 </li>
                             ))}
                         </ul>
+
                     </div>
                 </div>
             </div>
