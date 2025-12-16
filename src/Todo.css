@@ -117,8 +117,8 @@ input[type="checkbox"]:checked {
 }
 
 .dark .header #addBtn{
-  background-color: #444;
-  color: white;
+  background-color: white;
+  color: black;
 }
 .dark .Todo {
   background-color: #1e1e1e;
@@ -134,6 +134,42 @@ input[type="checkbox"]:checked {
   border-color: #555;
 }
 
+
+
+/* Hover Effects*/
+
+.top span:hover{
+  color: orange;
+  transition: all 0.3s ease;
+}
+
+.header #addBtn:hover{
+  background-color: white;
+  color: purple;
+  transition: all 0.3s ease;
+  border: 2px solid purple;
+  cursor: pointer;
+}
+.taskContainer ul li i:hover{
+  color: red;
+  transition: all 0.3s ease;
+}
+
+.dark .header #addBtn:hover{
+  background-color: #444;
+  color: white;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+  cursor: pointer;
+}
+.dark .top span:hover{
+  color: yellow;
+  transition: all 0.3s ease;
+}
+.dark .taskContainer ul li i:hover{
+  color: red;
+  transition: all 0.3s ease;
+}
 /* Responsive Design */
 
 @media (max-width: 480px) {

@@ -49,7 +49,7 @@ export default function Todo() {
                             {mode ? (
                                 <i className="fa-solid fa-moon"></i>
                             ) : (
-                                <i className="fa-regular fa-sun"></i>)}
+                                <i class="fa-solid fa-sun"></i>)}
                         </span>
                     </div>
                     <form className="header" onSubmit={addTaskHandler}>
@@ -58,6 +58,7 @@ export default function Todo() {
                             placeholder="Enter task"
                             id="taskInput"
                             value={tasks}
+    
                             onChange={onChangeHandler}
                         ></input>
                         <button id="addBtn" type='submit'>Add Task</button>
