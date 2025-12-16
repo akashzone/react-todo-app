@@ -100,17 +100,19 @@ input[type="checkbox"]:checked {
 }
 
 @media (max-width: 480px) {
+  .header{
+    max-width: 95%;
+  }
   #taskInput {
     flex: 1;
     min-width: 0;
-    padding: 0.8rem 0.9rem;
-    margin-left: 0.2rem;
+    padding: 0.8rem 0.5rem;
+    margin-left: 0.6rem;
     font-size: 0.9rem;
   }
 
   #addBtn {
     padding: 0.87rem 0.7rem;
-    margin-right: 0.2rem;
     font-size: 0.9rem;
   }
 }
