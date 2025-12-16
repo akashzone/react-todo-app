@@ -3,6 +3,7 @@ import { useState } from 'react';
 export default function Todo() {
 
     const [tasks, setTasks] = useState("");
+    const [mode, setMode] = useState(false);
 
 
     const [todos, setTodos] = useState(() => {
@@ -17,6 +18,10 @@ export default function Todo() {
     }
     function addTaskHandler(event) {
         event.preventDefault();
+        if (tasks.trim() === "") {
+            alert("Please enter a task");
+            return;
+        }
         let newTodo = [...todos, tasks];
         console.log(newTodo);
         setTodos(newTodo);
@@ -30,12 +35,23 @@ export default function Todo() {
         localStorage.setItem("todos", JSON.stringify(updatedTodos));
     }
 
+    function handleMode() {
+        setMode(!mode);
+    }
 
     return (
         <>
-            <div className="container">
+            <div className={`container ${mode ? "dark" : "light"}`}>
                 <div className="Todo">
-                    <h1 id='title'>Todo List</h1>
+                    <div className="top">
+                        <h1 id='title'>Todo List</h1>
+                        <span onClick={handleMode}>
+                            {mode ? (
+                                <i className="fa-solid fa-moon"></i>
+                            ) : (
+                                <i className="fa-regular fa-sun"></i>)}
+                        </span>
+                    </div>
                     <form className="header" onSubmit={addTaskHandler}>
                         <input
                             type="text"
